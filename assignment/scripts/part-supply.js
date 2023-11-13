@@ -6,25 +6,37 @@ console.log('****** Part Supply *******');
 // 1. Create a variable called 'partsNeeded' with a value of the number 40.
 console.log('1. Create partsNeeded:');
 
+partsNeeded = 40;
+console.log(partsNeeded);
 
 // 2. Create a variable called 'supplyChanges' whose value is an array containing
 //    the following numbers: 3, 5, -6, 0, 7, 11.
 console.log('2. Create supplyChanges:');
 
+supplyChanges = [3, 5, -6, 0, 7, 11];
+console.log(supplyChanges);
 
 // 3. Create a variable called 'secondItem' and assign it the value of the second
 //    item in the 'supplyChanges' array.
 console.log('3. Access the second value of supplyChanges:');
 
+secondItem = supplyChanges[1];
+console.log(secondItem);
 
 // 4. The last value in the 'supplyChanges' array was added by mistake.
 //    Remove it from the array and store it inside a new variable called 'removedItem'.
-console.log('4. Remove the last value from supplyChanges:');
+// console.log('4. Remove the last value from supplyChanges:');
+removedItem = supplyChanges.pop();
 
+
+console.log('Removed the last value from the supplyChanges', supplyChanges);
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
 console.log('5. Add the value 25 into supplyChanges.');
 
+addedItem = supplyChanges.push(25);
+
+console.log('Add the value of 25 into supplyChanges', supplyChanges);
 
 // 6. Create three new variables named 'positives', 'negatives', and
 //    'zeroes' whose values are empty arrays. Then, write a for loop
@@ -35,8 +47,24 @@ console.log('5. Add the value 25 into supplyChanges.');
 //      - If the value is a zero, push it into the 'zeroes' array.
 console.log('6. Looping through supplyChanges to populate arrays with positive, negative, and zero values:');
 
+//REVIEW !!!!!!!!!!!!!!!!!!!!!!
+const positives = [];
+const negatives = [];
+const zeroes = [];
 
+for (i = 0; i < supplyChanges.length; i++){
+  if (supplyChanges[i] > 0){
+    positives.push(supplyChanges[i]);
+  } else if (supplyChanges[i] < 0) {
+    negatives.push(supplyChanges[i]);
+  } else {
+    zeroes.push(supplyChanges[i]);
+  }
+}
 
+console.log(positives);
+console.log(negatives);
+console.log(zeroes);
 
 // ***** STRETCH GOALS *********************************************
 // 7. Rewrite the 'for' loop from #6 as a 'for...of' loop. Instead of 'positives',
